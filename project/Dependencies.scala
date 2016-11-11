@@ -26,4 +26,5 @@ object Library {
   val circeJava8                = "io.circe"                 %% "circe-java8"                        % Version.Circe
   val log4jCore                 = "org.apache.logging.log4j" %  "log4j-core"                         % Version.Log4j
   val scalaTest                 = "org.scalatest"            %% "scalatest"                          % Version.ScalaTest
+  val junit                     = "junit"                    % "junit"                              % "4.12"
 }
