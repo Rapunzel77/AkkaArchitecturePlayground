@@ -21,7 +21,8 @@ class Nara extends Actor with ActorLogging {
   val geoLocations = context.actorOf(GeoLocations(), GeoLocations.Name)
   context.watch (geoLocations)
 
-  // context.system.scheduler.scheduleOnce(2.seconds, geoLocations, AddressToLocation(Address("Bob'n de Lieth 55", "Bad Bramstedt", "Germany")))
+  val api = context.actorOf (Api(geoLocations, "localhost", 8080), Api.Name)
+  context.watch (api)
 
   val f = geoLocations ? AddressToLocation(Address("Bob'n de Lieth 55", "Bad Bramstedt", "Germany"))
   f.onComplete(println)
