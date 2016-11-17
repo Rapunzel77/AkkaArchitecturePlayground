@@ -11,7 +11,7 @@ object GeoLocations {
 }
 
 class GeoLocations extends Actor with ActorLogging {
-  import GeoLocation._
+  import GeoLocations._
 
   override def receive = {
     case msg: AddressToLocation => onAddressToLocation (msg)
