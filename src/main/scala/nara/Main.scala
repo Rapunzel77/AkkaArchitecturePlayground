@@ -1,6 +1,7 @@
 package nara
 
 import akka.actor.ActorSystem
+import akka.stream.ActorMaterializer
 
 import scala.concurrent.Await
 import scala.concurrent.duration._

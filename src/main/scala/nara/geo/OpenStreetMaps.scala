@@ -41,6 +41,6 @@ class OpenStreetMaps extends Actor with ActorLogging{
   }
 
   def onResponse(replyTo: ActorRef, response: HttpResponse): Unit = {
-    response.entity.
+    ???
   }
 }

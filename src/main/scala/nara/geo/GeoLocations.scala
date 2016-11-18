@@ -1,7 +1,7 @@
 package nara.geo
 
 import akka.actor.{Actor, ActorLogging, Props}
-import nara.geo.OpenSteetMaps.{ResultingCoordinates, RetriveLocation}
+import nara.geo.OpenSteetMaps.ResultingCoordinates
 
 
 object GeoLocations {
