@@ -6,6 +6,7 @@ object Version {
   final val AkkaLog4j                = "1.1.5"
   final val AkkaPersistenceCassandra = "0.18"
   final val Circe                    = "0.5.3"
+  final val Play                     = "2.5.9"
   final val Log4j                    = "2.6.2"
   final val Scala                    = "2.11.8"
   final val ScalaTest                = "3.0.0"
@@ -13,6 +14,7 @@ object Version {
 
 object Library {
   val akkaClusterSharding       = "com.typesafe.akka"        %% "akka-cluster-sharding"              % Version.Akka
+  val akkaContrib               = "com.typesafe.akka"        %% "akka-contrib"                       % Version.Akka
   val akkaDistributedData       = "com.typesafe.akka"        %% "akka-distributed-data-experimental" % Version.Akka
   val akkaPersistenceCassandra  = "com.typesafe.akka"        %% "akka-persistence-cassandra"         % Version.AkkaPersistenceCassandra
   val akkaHttp                  = "com.typesafe.akka"        %% "akka-http-experimental"             % Version.Akka
@@ -25,6 +27,7 @@ object Library {
   val circeParser               = "io.circe"                 %% "circe-parser"                       % Version.Circe
   val circeJava8                = "io.circe"                 %% "circe-java8"                        % Version.Circe
   val log4jCore                 = "org.apache.logging.log4j" %  "log4j-core"                         % Version.Log4j
+  val playJson                  = "com.typesafe.play"        %% "play-json"                          % Version.Play
   val scalaTest                 = "org.scalatest"            %% "scalatest"                          % Version.ScalaTest
-  val junit                     = "junit"                    % "junit"                              % "4.12"
+  val junit                     = "junit"                    % "junit"                               % "4.12"
 }

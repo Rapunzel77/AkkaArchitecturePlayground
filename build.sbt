@@ -11,6 +11,7 @@ lazy val `akka-mit-niko` =
 
 libraryDependencies ++= Vector(
   Library.akkaClusterSharding,
+  Library.akkaContrib,
   Library.akkaDistributedData,
   Library.akkaHttp,
   Library.akkaHttpCirce,
@@ -20,6 +21,7 @@ libraryDependencies ++= Vector(
   Library.circeParser,
   Library.circeJava8,
   Library.log4jCore,
+  Library.playJson,
   Library.akkaHttpTestkit % "test",
   Library.akkaMultiNodeTestkit % "test",
   Library.akkaTestkit % "test",
