@@ -13,6 +13,7 @@ trait InactiveTimeout extends ReceivePipeline { this: ActorLogging =>
 
   pipelineInner {
     case ReceiveTimeout =>
+      println(s"timeout due to inactivity in ${getClass.getName}")
       log.error("timeout due to inactivity in {}", getClass.getName)
       context.stop(self)
       HandledCompletely

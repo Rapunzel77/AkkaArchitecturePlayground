@@ -1,6 +1,7 @@
 package nara
 
 import akka.actor.{Actor, ActorLogging, Props, Terminated}
+import akka.http.scaladsl.Http
 import akka.util.Timeout
 import nara.geo.{Address, GeoLocations}
 import nara.geo.GeoLocations.AddressToLocation
@@ -17,7 +18,9 @@ class Nara extends Actor with ActorLogging {
   import context.dispatcher
   implicit val timeout: Timeout = 1.minute
 
-  val geoLocations = context.actorOf(GeoLocations(), GeoLocations.Name)
+  val http = Http(context.system)
+
+  val geoLocations = context.actorOf(GeoLocations(http), GeoLocations.Name)
   context.watch(geoLocations)
 
   val api = context.actorOf(Api(geoLocations, "localhost", 8080), Api.Name)
