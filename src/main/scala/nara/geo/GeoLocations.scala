@@ -13,10 +13,14 @@ object GeoLocations {
 class GeoLocations(http: HttpExt) extends Actor with ActorLogging {
   import GeoLocations._
 
+  println ("==> starting GeoLocations")
+
   override def receive = {
     case msg: AddressToLocation => onAddressToLocation(msg)
   }
 
-  def onAddressToLocation(msg: AddressToLocation) = context.actorOf (OpenStreetMaps (http, sender), OpenStreetMaps.Name) ! msg
-
+  def onAddressToLocation(msg: AddressToLocation) = {
+    println ("==> handling for " + msg)
+    context.actorOf (OpenStreetMaps (http, sender), OpenStreetMaps.Name) ! msg
+  }
 }
